@@ -11,11 +11,11 @@ class MessagesController < ApplicationController
     message = room.messages.create(message_params)
 
     render json: message, status: :created
+  end
 
     private
 
     def message_params
       params.require(:message).permit(:content, :sender_name)
     end
-  end
 end
